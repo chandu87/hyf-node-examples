@@ -16,7 +16,6 @@ class ContactList{
         console.log("contact can't be added");
     }
     save(){
-        console.log(this.fileName, this.list);
         writeFileP(this.fileName, JSON.stringify(this.list))
         .then(()=>{console.log("File saved")})
         .catch((err)=>{console.log("error saving file" + err)});

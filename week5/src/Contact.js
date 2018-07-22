@@ -11,6 +11,7 @@ class Contact {
 //		 console.log(typeof (JSON.parse(val)) === 'number');
 		if(typeof numAge === 'number')
 			this._age = numAge;
+		throw "Age should be a number";
 	}
 	get age (){
 		return this._age;

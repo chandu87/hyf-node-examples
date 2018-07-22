@@ -1,12 +1,22 @@
 "use strict";
 
-var _Contact = require("./Contact.js");
+var _Contact_two = require("./Contact_two");
 
-var _Contact2 = _interopRequireDefault(_Contact);
+try {
+    let rohit = new _Contact_two.Contact("Chandrashekar Reddy Palle", 1);
+    console.log(rohit.name);
+} catch (error) {
+    console.log(error);
+} // import Contact from './Contact.js';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+// let richard = new Contact("richard", "20", "1");
+// console.log(richard);
+// console.log(Number("2"));
+// try{
+// richard.age = "adk";
+// }
+// catch(error){
+//     console.log(error);
 
-let richard = new _Contact2.default("richard", "20", "1");
-console.log(richard);
-console.log(Number("2"));
+// }
 //# sourceMappingURL=index.js.map

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -15,6 +15,7 @@ class Contact {
 		//		 console.log(val);
 		//		 console.log(typeof (JSON.parse(val)) === 'number');
 		if (typeof numAge === 'number') this._age = numAge;
+		throw "Age should be a number";
 	}
 	get age() {
 		return this._age;
@@ -28,7 +29,7 @@ class Contact {
 		return this._name;
 	}
 	set id(val) {
-		const numVal = JSON.parse(val);
+		const numVal = Number(val);
 		if (Number.isInteger(numVal)) {
 			this._id = numVal;
 		}

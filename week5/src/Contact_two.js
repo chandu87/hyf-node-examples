@@ -24,6 +24,14 @@ class Person {
   get name() {
     return this._name;
   }
+  set id(val){
+    if(typeof(val) === 'number')
+      return this._id = val;
+    throw "ID should be a number";
+  }
+  get id(){
+    return this._id;
+  }
 }
 
 class Contact extends Person {
@@ -42,20 +50,17 @@ class Contact extends Person {
     this.lastName = nameParts.join(" ");
   }
   set phone(val){
-    console.log("Phone number", val);
-       console.log(typeof(val) === 'number');
-        console.log(val.toString().length);
-
     if(typeof(val) === 'number' && val.toString().length == 8)
-     this._phone = val;
+     return this._phone = val;
+  throw "Phone number should be a 8 digit number";
   }
   get phone(){
     return this._phone;
   }
   set email(val){
-      if (val.includes("@")) 
-     this._email = val;
-
+    if (val.includes("@")) 
+     return this._email = val;
+    throw "Email should contain '@' ";
   }
   get email(){
     return this._email;

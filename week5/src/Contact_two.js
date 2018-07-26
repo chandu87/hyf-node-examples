@@ -65,6 +65,7 @@ class Contact extends Person {
   get email(){
     return this._email;
   }
+
 }
 
 // export default Contact;

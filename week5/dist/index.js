@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
-var _Contact_two = require("./Contact_two");
+var _Contact_two = require('./Contact_two');
 
 try {
-    let rohit = new _Contact_two.Contact("Chandrashekar Reddy Palle", 1);
-    console.log(rohit.name);
+    let chandu = new _Contact_two.Contact("Chandrashekar Reddy Palle", 1, 23, 23452345, 'chandu@gmail.com');
+    console.log(chandu);
 } catch (error) {
     console.log(error);
 } // import Contact from './Contact.js';

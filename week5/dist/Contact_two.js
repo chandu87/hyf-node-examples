@@ -1,48 +1,69 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 class Person {
-	constructor(name, id, age) {
-		if (!name || !id) throw "Name and id are required.";
-		this.name = name;
-		if (age) this.age = age;
-		this.id = id;
-	}
+  constructor(name, id, age) {
+    if (!name || !id) throw "Name and id are required.";
+    this.name = name;
+    if (age) this.age = age;
+    this.id = id;
+  }
 
-	set age(val) {
-		// console.log(val);
-		if (typeof val === 'number') return this._age = val;
-		throw "Age should be a number.";
-	}
+  set age(val) {
+    // console.log(val);
+    if (typeof val === "number") return this._age = val;
+    throw "Age should be a number.";
+  }
 
-	get age() {
-		return this._age;
-	}
+  get age() {
+    return this._age;
+  }
 
-	set name(val) {
-		if (typeof val === "string") return this._name = val;
-		throw "Name should be a string.";
-	}
+  set name(val) {
+    if (typeof val === "string") return this._name = val;
+    throw "Name should be a string.";
+  }
 
-	get name() {
-		return this._name;
-	}
+  get name() {
+    return this._name;
+  }
 }
 
 class Contact extends Person {
-	constructor(name, id, age, phone, email) {
-		if (age) {
-			super(name, id, age);
-		} else super(name, id);
-		this.phone = phone;
-		this.email = email;
+  constructor(name, id, age, phone, email) {
+    if (age) {
+      super(name, id, age);
+    } else super(name, id);
+    if (email && phone) {
+      this.phone = phone;
+      this.email = email;
+    } else {
+      throw "Phone and email Is needed";
+    }
+    let nameParts = name.split(" ");
+    this.firstName = nameParts.shift();
+    this.lastName = nameParts.join(" ");
+  }
+  set phone(val) {
+    console.log("Phone number", val);
+    console.log(typeof val === 'number');
+    console.log(val.toString().length);
 
-		let nameParts = name.split(" ");
-		this.firstName = nameParts.shift();
-		this.lastName = nameParts.join(" ");
-	}
+    if (typeof val === 'number' && val.toString().length == 8) this._phone = val;
+  }
+  get phone() {
+    return this._phone;
+  }
+  //   console.log(typeof(phone) === 'number');
+  //   console.log(phone.length);
+  //   if(typeof(phone) === 'number' && phone.length== 8)
+  //     this.phone = phone;
+  //   if (email.includes("@")) 
+  //     this.email = email;
+
+
 }
 
 // export default Contact;

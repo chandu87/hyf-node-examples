@@ -56,14 +56,12 @@ class Contact extends Person {
   get phone() {
     return this._phone;
   }
-  //   console.log(typeof(phone) === 'number');
-  //   console.log(phone.length);
-  //   if(typeof(phone) === 'number' && phone.length== 8)
-  //     this.phone = phone;
-  //   if (email.includes("@")) 
-  //     this.email = email;
-
-
+  set email(val) {
+    if (val.includes("@")) this._email = val;
+  }
+  get email() {
+    return this._email;
+  }
 }
 
 // export default Contact;

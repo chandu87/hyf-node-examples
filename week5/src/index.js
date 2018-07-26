@@ -15,7 +15,7 @@
 import {Person, Contact} from './Contact_two';
 
 try{
-let chandu = new Contact("Chandrashekar Reddy Palle", 1, 23, 23452345, 'chandu@gmail.com');
+let chandu = new Contact("Chandrashekar Reddy Palle", 1, 23, 'chandu@gmail.com');
 console.log(chandu);
 }catch(error){
     console.log(error);

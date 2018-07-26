@@ -35,7 +35,7 @@ class Contact extends Person {
           this.phone = phone;
           this.email = email;
         }else{
-          throw "Phone and email Is needed";
+          throw "Phone Number and Email-ID is needed";
         }
     let nameParts = name.split(" ");
     this.firstName = nameParts.shift();
@@ -52,11 +52,14 @@ class Contact extends Person {
   get phone(){
     return this._phone;
   }
-//   if (email.includes("@")) 
-//     this.email = email;
+  set email(val){
+      if (val.includes("@")) 
+     this._email = val;
 
-
-
+  }
+  get email(){
+    return this._email;
+  }
 }
 
 // export default Contact;

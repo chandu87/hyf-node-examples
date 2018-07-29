@@ -39,16 +39,20 @@ class Person {
 }
 
 class Contact extends Person {
-  constructor(name, id, age, phone, email) {
+  constructor(name, age, phone, email) {
     if (age) {
-      super(name, id, age);
-    } else super(name, id);
+      super(name, email, age);
+    } else super(name, email);
     if (email && phone) {
       this.phone = phone;
       this.email = email;
     } else {
       throw "Phone Number and Email-ID is needed";
     }
+
+    // delete this._id;
+    // delete this.id;    
+    this.id = email;
     let nameParts = name.split(" ");
     this.firstName = nameParts.shift();
     this.lastName = nameParts.join(" ");
@@ -68,9 +72,13 @@ class Contact extends Person {
     return this._email;
   }
   set id(val) {
-    console.log(this._email);
-    this._id = this._email;
+    if (val.includes("@")) return this._id = val;
+    throw "Email should contain '@' ";
   }
+  get id() {
+    return this._id;
+  }
+
 }
 
 // export default Contact;

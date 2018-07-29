@@ -3,7 +3,7 @@
 var _Contact_two = require('./Contact_two');
 
 try {
-    let chandu = new _Contact_two.Contact("Chandrashekar Reddy Palle", 1, 23, 23222223, 'chandu@gmail.com');
+    let chandu = new _Contact_two.Contact("Chandrashekar Reddy Palle", 23, 23222223, 'chandu@gmail.com');
     console.log(chandu);
 } catch (error) {
     console.log(error);
